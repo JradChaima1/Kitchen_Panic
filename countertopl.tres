@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dkej4e8fbm0lh"]
+
+[ext_resource type="Shader" uid="uid://cgp26erxaumpo" path="res://scenes/counter.gdshader" id="1_slho8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_slho8")
+shader_parameter/base_color = Color(1, 0.9529412, 0.8627451, 1)
+shader_parameter/gloss = 0.4
+shader_parameter/rim_amount = 0.3
+shader_parameter/floor_darken = 0.3
+shader_parameter/darken_height = 1.0

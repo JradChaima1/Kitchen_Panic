@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d30beksc0kdu6"]
+
+[ext_resource type="Texture2D" uid="uid://mrwuxksy8tq3" path="res://textures/glass_text.jpg" id="1_akt23"]
+
+[resource]
+shading_mode = 0
+albedo_color = Color(1, 0.9490196, 0.8784314, 1)
+albedo_texture = ExtResource("1_akt23")
