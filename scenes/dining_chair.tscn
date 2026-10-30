@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/dining_chair.gd" id="1_chair"]
+
+[sub_resource type="StandardMaterial3D" id="ChairMaterial"]
+albedo_color = Color(0.435294, 0.827451, 0.768627, 1)
+roughness = 0.74
+
+[sub_resource type="BoxMesh" id="ChairSeatMesh"]
+size = Vector3(0.72, 0.15, 0.72)
+
+[sub_resource type="BoxMesh" id="ChairBackMesh"]
+size = Vector3(0.72, 0.72, 0.14)
+
+[sub_resource type="BoxMesh" id="ChairLegMesh"]
+size = Vector3(0.1, 0.52, 0.1)
+
+[node name="DiningChair" type="Node3D"]
+script = ExtResource("1_chair")
+
+[node name="ModelAnchor" type="Node3D" parent="." unique_name_in_owner=true]
+
+[node name="Placeholder" type="Node3D" parent="." unique_name_in_owner=true]
+
+[node name="Seat" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0, 0.58, 0)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairSeatMesh")
+
+[node name="Back" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0, 0.94, 0.29)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairBackMesh")
+
+[node name="LegFrontLeft" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(-0.26, 0.26, -0.26)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairLegMesh")
+
+[node name="LegFrontRight" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0.26, 0.26, -0.26)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairLegMesh")
+
+[node name="LegBackLeft" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(-0.26, 0.26, 0.26)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairLegMesh")
+
+[node name="LegBackRight" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0.26, 0.26, 0.26)
+material_override = SubResource("ChairMaterial")
+mesh = SubResource("ChairLegMesh")

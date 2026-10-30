@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dlo8hd654xwpo"]
+
+[sub_resource type="GDScript" id="GDScript_vqg1w"]
+script/source = "extends CanvasLayer
+
+signal reset_requested
+
+@onready var activation_url: LineEdit = $Panel/MarginContainer/VBoxContainer/ActivationUrl
+@onready var user_code: Label = $Panel/MarginContainer/VBoxContainer/UserCode
+@onready var status_label: Label = $Panel/MarginContainer/VBoxContainer/StatusLabel
+
+
+func _ready() -> void:
+	$Panel/MarginContainer/VBoxContainer/CopyUrlButton.pressed.connect(_copy_activation_url)
+	$Panel/MarginContainer/VBoxContainer/ResetButton.pressed.connect(_on_reset_pressed)
+
+
+func show_authorization(verification_uri: String, code: String) -> void:
+	activation_url.text = verification_uri
+	user_code.text = \"Activation code: %s\" % code
+	status_label.text = \"Waiting for Twitch approval\"
+
+
+func set_status(status: String) -> void:
+	status_label.text = status
+
+
+func _copy_activation_url() -> void:
+	DisplayServer.clipboard_set(activation_url.text)
+	status_label.text = \"Activation URL copied to clipboard\"
+
+
+func _on_reset_pressed() -> void:
+	reset_requested.emit()
+"
+
+[node name="TwitchAuthOverlay" type="CanvasLayer" unique_id=559165350]
+layer = 20
+script = SubResource("GDScript_vqg1w")
+
+[node name="Shade" type="ColorRect" parent="." unique_id=702427954]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.08, 0.05, 0.14, 0.88)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1190351537]
+offset_left = 180.0
+offset_top = 135.0
+offset_right = 972.0
+offset_bottom = 513.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=638595991]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1456214447]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1117473840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Connect Kitchen Panic to Twitch"
+horizontal_alignment = 1
+
+[node name="Instructions" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=54599718]
+layout_mode = 2
+text = "Open the activation URL in a browser, sign in to Twitch, and approve read-only chat access."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ActivationUrl" type="LineEdit" parent="Panel/MarginContainer/VBoxContainer" unique_id=556159803]
+layout_mode = 2
+editable = false
+select_all_on_focus = true
+
+[node name="CopyUrlButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=560284558]
+layout_mode = 2
+text = "Copy activation URL"
+
+[node name="UserCode" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1314613714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Activation code: loading"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1224288950]
+layout_mode = 2
+text = "Requesting Twitch activation code"
+horizontal_alignment = 1
+
+[node name="ResetButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2130078573]
+layout_mode = 2
+text = "Reset saved Twitch login"

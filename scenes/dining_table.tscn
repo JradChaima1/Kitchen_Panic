@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/dining_table.gd" id="1_table"]
+
+[sub_resource type="StandardMaterial3D" id="TableTopMaterial"]
+albedo_color = Color(1, 0.878431, 0.4, 1)
+roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="TableLegMaterial"]
+albedo_color = Color(0.85098, 0.584314, 0.309804, 1)
+roughness = 0.76
+
+[sub_resource type="BoxMesh" id="TableTopMesh"]
+size = Vector3(2.1, 0.16, 1.45)
+
+[sub_resource type="BoxMesh" id="TableLegMesh"]
+size = Vector3(0.16, 0.88, 0.16)
+
+[node name="DiningTable" type="Node3D"]
+script = ExtResource("1_table")
+
+[node name="ModelAnchor" type="Node3D" parent="." unique_name_in_owner=true]
+
+[node name="Placeholder" type="Node3D" parent="." unique_name_in_owner=true]
+
+[node name="TableTop" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0, 0.96, 0)
+material_override = SubResource("TableTopMaterial")
+mesh = SubResource("TableTopMesh")
+
+[node name="LegFrontLeft" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(-0.82, 0.44, -0.52)
+material_override = SubResource("TableLegMaterial")
+mesh = SubResource("TableLegMesh")
+
+[node name="LegFrontRight" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0.82, 0.44, -0.52)
+material_override = SubResource("TableLegMaterial")
+mesh = SubResource("TableLegMesh")
+
+[node name="LegBackLeft" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(-0.82, 0.44, 0.52)
+material_override = SubResource("TableLegMaterial")
+mesh = SubResource("TableLegMesh")
+
+[node name="LegBackRight" type="MeshInstance3D" parent="Placeholder"]
+position = Vector3(0.82, 0.44, 0.52)
+material_override = SubResource("TableLegMaterial")
+mesh = SubResource("TableLegMesh")
+
+[node name="SeatSlots" type="Node3D" parent="."]
+
+[node name="SeatSlotNorth" type="Marker3D" parent="SeatSlots"]
+position = Vector3(0, 0, -1.3)
+rotation = Vector3(0, 3.141593, 0)
+
+[node name="SeatSlotSouth" type="Marker3D" parent="SeatSlots"]
+position = Vector3(0, 0, 1.3)
+
+[node name="SeatSlotEast" type="Marker3D" parent="SeatSlots"]
+position = Vector3(1.45, 0, 0)
+rotation = Vector3(0, 1.570796, 0)
+
+[node name="SeatSlotWest" type="Marker3D" parent="SeatSlots"]
+position = Vector3(-1.45, 0, 0)
+rotation = Vector3(0, -1.570796, 0)

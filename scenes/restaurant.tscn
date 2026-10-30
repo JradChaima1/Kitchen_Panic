@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://nth0u225n5hq"]
+
+[ext_resource type="PackedScene" uid="uid://cs2x52bote4as" path="res://scenes/kitchen.tscn" id="1_kitchen"]
+[ext_resource type="PackedScene" uid="uid://ch0p0boqfrtw4" path="res://scenes/dining_area.tscn" id="2_dining"]
+[ext_resource type="Script" uid="uid://bxkjrftrd8mbt" path="res://scripts/ui/chat_ui.gd" id="3_y2pbi"]
+[ext_resource type="PackedScene" uid="uid://dyemhpnhvx3l4" path="res://assets/chef.glb" id="4_f3ktr"]
+
+[sub_resource type="Environment" id="Environment_iw0ck"]
+background_mode = 1
+background_color = Color(0.9019608, 0.9098039, 0.92156863, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.9098039, 0.93333334, 1, 1)
+ambient_light_energy = 0.5
+ssao_enabled = true
+ssao_intensity = 0.0
+glow_enabled = true
+glow_bloom = 0.05
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.1
+
+[node name="Restaurant" type="Node3D" unique_id=542352021]
+
+[node name="Kitchen" parent="." unique_id=331330128 instance=ExtResource("1_kitchen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049838096, 0.018182874, 0.01660943)
+
+[node name="DiningArea" parent="." unique_id=1266168233 instance=ExtResource("2_dining")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040327072, 0.023862839, -2.4786882)
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=2120527243]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=2120410432]
+transform = Transform3D(0.7071067, -0.4075992, 0.5778087, 0, 0.8171449, 0.57643235, -0.7071067, -0.4075992, 0.5778087, 15, 15, 15)
+projection = 1
+size = 22.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1769715806]
+transform = Transform3D(0.90630805, -0.3461886, 0.24240379, 0, 0.5735764, 0.81915176, -0.42261842, -0.7424038, 0.5198366, 0, 10, 0)
+light_color = Color(1, 0.94509804, 0.8784314, 1)
+light_energy = 0.9
+light_angular_distance = 0.5
+shadow_enabled = true
+shadow_blur = 3.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=22048533]
+environment = SubResource("Environment_iw0ck")
+
+[node name="ChatUI" type="CanvasLayer" parent="." unique_id=908730661]
+visible = false
+script = ExtResource("3_y2pbi")
+
+[node name="chef" parent="." unique_id=776724297 instance=ExtResource("4_f3ktr")]
+transform = Transform3D(1.1935648, 0, 0, 0, 2.096051, 0, 0, 0, 1.2857289, -1.2386832, 0, -1.8030739)

@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://ch0p0boqfrtw4"]
+
+[ext_resource type="Script" uid="uid://b6d048dghfxqj" path="res://scripts/dining_area.gd" id="1_area"]
+[ext_resource type="Shader" uid="uid://dpabwyw30qvmy" path="res://scenes/kitchen.gdshader" id="2_floor_shader"]
+[ext_resource type="Material" uid="uid://b0osdwosv1uwv" path="res://wall_cream.tres" id="3_wall"]
+[ext_resource type="Material" uid="uid://tt6hskn3nhqd" path="res://trim_shader.tres" id="4_trim"]
+[ext_resource type="Material" uid="uid://d30beksc0kdu6" path="res://glass_pane.tres" id="5_4d3iq"]
+[ext_resource type="Material" uid="uid://kfyvy60v6uja" path="res://glass_material_3d.tres" id="5_glass"]
+[ext_resource type="Material" uid="uid://cte8mhnnlg46y" path="res://bar_materila_shader.tres" id="7_2e3bp"]
+[ext_resource type="Material" uid="uid://dx3ojry6yurkg" path="res://Bar_material.tres" id="8_wwwwe"]
+
+[sub_resource type="ShaderMaterial" id="FloorMaterial"]
+render_priority = 0
+shader = ExtResource("2_floor_shader")
+shader_parameter/color_a = Color(0.98, 0.96, 0.93, 1)
+shader_parameter/color_b = Color(0.72, 0.64, 0.89, 1)
+shader_parameter/tiles = Vector2(11, 10)
+
+[sub_resource type="PlaneMesh" id="FloorMesh"]
+size = Vector2(11, 10)
+
+[sub_resource type="BoxMesh" id="RightWallMesh"]
+size = Vector3(0.3, 3, 10.3)
+
+[sub_resource type="BoxMesh" id="BackWallMesh"]
+size = Vector3(11.3, 3, 0.3)
+
+[sub_resource type="BoxMesh" id="FrontWallLeftMesh"]
+size = Vector3(4.2, 3, 0.3)
+
+[sub_resource type="BoxMesh" id="FrontWallRightMesh"]
+size = Vector3(4.2, 3, 0.3)
+
+[sub_resource type="BoxMesh" id="TrimRightMesh"]
+size = Vector3(0.6, 0.35, 10.6)
+
+[sub_resource type="BoxMesh" id="TrimBackMesh"]
+size = Vector3(11.6, 0.35, 0.6)
+
+[sub_resource type="BoxMesh" id="TrimFrontLeftMesh"]
+size = Vector3(4.5, 0.35, 0.6)
+
+[sub_resource type="BoxMesh" id="TrimFrontRightMesh"]
+size = Vector3(4.5, 0.35, 0.6)
+
+[sub_resource type="BoxMesh" id="WindowFrameMesh"]
+size = Vector3(2.4, 1.65, 0.2)
+
+[sub_resource type="BoxMesh" id="WindowGlassMesh"]
+size = Vector3(2.05, 1.3, 0.08)
+
+[sub_resource type="QuadMesh" id="QuadMesh_4d3iq"]
+size = Vector2(2, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4d3iq"]
+size = Vector3(2, 1.2, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfuod"]
+size = Vector3(0.12, 1.2, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ivaa5"]
+size = Vector3(2, 0.12, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gwhv8"]
+size = Vector3(2.4, 1.6, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbl00"]
+size = Vector3(2, 1.2, 0.25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_uc4p0"]
+size = Vector2(2, 1.2)
+
+[sub_resource type="BoxMesh" id="DoorFrameMesh"]
+size = Vector3(1.9, 2.7, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="DoorMaterial"]
+albedo_color = Color(1, 0.498039, 0.498039, 1)
+roughness = 0.62
+
+[sub_resource type="BoxMesh" id="DoorPanelMesh"]
+size = Vector3(1.55, 2.35, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="DoorKnobMaterial"]
+albedo_color = Color(1, 0.878431, 0.4, 1)
+metallic = 0.25
+roughness = 0.35
+
+[sub_resource type="SphereMesh" id="DoorKnobMesh"]
+radius = 0.09
+height = 0.18
+
+[node name="DiningArea" type="Node3D" unique_id=1412451153]
+script = ExtResource("1_area")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1700509828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 1.5)
+material_override = SubResource("FloorMaterial")
+mesh = SubResource("FloorMesh")
+
+[node name="Walls" type="Node3D" parent="." unique_id=870308539]
+
+[node name="RightWall" type="MeshInstance3D" parent="Walls" unique_id=71592534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.15, 1.5, 1.5)
+material_override = ExtResource("3_wall")
+mesh = SubResource("RightWallMesh")
+
+[node name="BackWall" type="MeshInstance3D" parent="Walls" unique_id=1435227505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.5, -3.65)
+material_override = ExtResource("3_wall")
+mesh = SubResource("BackWallMesh")
+
+[node name="FrontWallLeft" type="MeshInstance3D" parent="Walls" unique_id=1033809902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 1.5, 6.65)
+material_override = ExtResource("3_wall")
+mesh = SubResource("FrontWallLeftMesh")
+
+[node name="FrontWallRight" type="MeshInstance3D" parent="Walls" unique_id=1657605424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9, 1.5, 6.65)
+material_override = ExtResource("3_wall")
+mesh = SubResource("FrontWallRightMesh")
+
+[node name="RightTrim" type="MeshInstance3D" parent="Walls" unique_id=1443561623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.15, 3.1, 1.5)
+material_override = ExtResource("4_trim")
+mesh = SubResource("TrimRightMesh")
+
+[node name="BackTrim" type="MeshInstance3D" parent="Walls" unique_id=1371802061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 3.1, -3.65)
+material_override = ExtResource("4_trim")
+mesh = SubResource("TrimBackMesh")
+
+[node name="FrontTrimLeft" type="MeshInstance3D" parent="Walls" unique_id=671998695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 3.1, 6.65)
+material_override = ExtResource("4_trim")
+mesh = SubResource("TrimFrontLeftMesh")
+
+[node name="FrontTrimRight" type="MeshInstance3D" parent="Walls" unique_id=409368574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9, 3.1, 6.65)
+material_override = ExtResource("4_trim")
+mesh = SubResource("TrimFrontRightMesh")
+
+[node name="Windows" type="Node3D" parent="." unique_id=610518854]
+
+[node name="FrontWindow" type="Node3D" parent="Windows" unique_id=1903961121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7, 1.7, 6.47)
+
+[node name="Frame" type="MeshInstance3D" parent="Windows/FrontWindow" unique_id=841985461]
+material_override = ExtResource("4_trim")
+mesh = SubResource("WindowFrameMesh")
+
+[node name="Glass" type="MeshInstance3D" parent="Windows/FrontWindow" unique_id=402986864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12)
+material_override = ExtResource("5_glass")
+mesh = SubResource("WindowGlassMesh")
+
+[node name="GlassPane" type="MeshInstance3D" parent="Windows/FrontWindow" unique_id=1030838460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147)
+material_override = ExtResource("5_4d3iq")
+mesh = SubResource("QuadMesh_4d3iq")
+
+[node name="RightWindowNear" type="Node3D" parent="Windows" unique_id=839877411]
+transform = Transform3D(3.1391647e-07, 0, 1, 0, 1, 0, -1, 0, 3.1391647e-07, 19.02, 1.7, -0.6)
+
+[node name="Frame" type="MeshInstance3D" parent="Windows/RightWindowNear" unique_id=591170204]
+material_override = ExtResource("4_trim")
+mesh = SubResource("WindowFrameMesh")
+
+[node name="Glass" type="MeshInstance3D" parent="Windows/RightWindowNear" unique_id=947776155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+material_override = ExtResource("5_glass")
+mesh = SubResource("BoxMesh_4d3iq")
+
+[node name="RightWindowFar" type="Node3D" parent="Windows" unique_id=1436992073]
+transform = Transform3D(3.1391647e-07, 0, 1, 0, 1, 0, -1, 0, 3.1391647e-07, 19.02, 1.7, 3.7)
+
+[node name="Frame" type="MeshInstance3D" parent="Windows/RightWindowFar" unique_id=1925351787]
+material_override = ExtResource("4_trim")
+mesh = SubResource("WindowFrameMesh")
+
+[node name="Glass" type="MeshInstance3D" parent="Windows/RightWindowFar" unique_id=628828258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12)
+material_override = ExtResource("5_glass")
+mesh = SubResource("WindowGlassMesh")
+
+[node name="GlassPane" type="MeshInstance3D" parent="Windows/RightWindowFar" unique_id=1205608735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147)
+material_override = ExtResource("5_4d3iq")
+mesh = SubResource("QuadMesh_4d3iq")
+
+[node name="BackWindow1" type="Node3D" parent="Windows" unique_id=1867373181]
+transform = Transform3D(-6.5567086e-08, 0, -1.3, 0, 1.5, 0, 1.5000001, 0, -5.6824803e-08, 17.058952, 3.4, 0.4699998)
+
+[node name="BarVertical" type="MeshInstance3D" parent="Windows/BackWindow1" unique_id=1771457745]
+material_override = ExtResource("7_2e3bp")
+mesh = SubResource("BoxMesh_rfuod")
+
+[node name="BarHorizontal" type="MeshInstance3D" parent="Windows/BackWindow1" unique_id=244423521]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 0.9999999, 0, 0, 0, 1, 0.002167523, 0, 0)
+material_override = ExtResource("7_2e3bp")
+mesh = SubResource("BoxMesh_ivaa5")
+
+[node name="Frame" type="MeshInstance3D" parent="Windows/BackWindow1" unique_id=1975833551]
+material_override = ExtResource("8_wwwwe")
+mesh = SubResource("BoxMesh_gwhv8")
+
+[node name="Glass" type="MeshInstance3D" parent="Windows/BackWindow1" unique_id=580312243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+material_override = ExtResource("5_glass")
+mesh = SubResource("BoxMesh_hbl00")
+
+[node name="GlassPane" type="MeshInstance3D" parent="Windows/BackWindow1" unique_id=1634435120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147)
+material_override = ExtResource("5_4d3iq")
+mesh = SubResource("QuadMesh_uc4p0")
+
+[node name="EntranceDoor" type="Node3D" parent="." unique_id=1488801075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.35, 6.65)
+
+[node name="Frame" type="MeshInstance3D" parent="EntranceDoor" unique_id=1066259829]
+material_override = ExtResource("4_trim")
+mesh = SubResource("DoorFrameMesh")
+
+[node name="Panel" type="MeshInstance3D" parent="EntranceDoor" unique_id=1046928809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, -0.08)
+material_override = SubResource("DoorMaterial")
+mesh = SubResource("DoorPanelMesh")
+
+[node name="Knob" type="MeshInstance3D" parent="EntranceDoor" unique_id=344315588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, -0.1, -0.17)
+material_override = SubResource("DoorKnobMaterial")
+mesh = SubResource("DoorKnobMesh")
+
+[node name="TableSlots" type="Node3D" parent="." unique_id=1152679888]
+
+[node name="TableSlot1" type="Marker3D" parent="TableSlots" unique_id=65993255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 0, -0.8)
+
+[node name="TableSlot2" type="Marker3D" parent="TableSlots" unique_id=2000045320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 0, -0.8)
+
+[node name="TableSlot3" type="Marker3D" parent="TableSlots" unique_id=1530560368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 0, 3.35)
+
+[node name="TableSlot4" type="Marker3D" parent="TableSlots" unique_id=508730654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 0, 3.35)
+
+[node name="CustomerEntrance" type="Marker3D" parent="." unique_id=978282737]
+transform = Transform3D(-1, 0, -3.2584137e-07, 0, 1, 0, 3.2584137e-07, 0, -1, 13.5, 0, 5.25)
+
+[node name="CustomerExit" type="Marker3D" parent="." unique_id=1548441256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 7.25)

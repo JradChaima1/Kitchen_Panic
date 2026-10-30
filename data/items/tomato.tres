@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dww1bktdwl6y2"]
+
+[ext_resource type="Script" uid="uid://wnoojeg5hpb0" path="res://scripts/items/item_data.gd" id="1_bprmv"]
+
+[resource]
+script = ExtResource("1_bprmv")
+id = "tomato"
+display_name = "Tomato"
+aliases = PackedStringArray("tomatoes", "tomato")
+metadata/_custom_type_script = "uid://wnoojeg5hpb0"

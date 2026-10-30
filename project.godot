@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="Kitchen Panic"
-run/main_scene="uid://cs2x52bote4as"
+run/main_scene="res://scenes/restaurant.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GuessManager="*uid://bvntbdxto6dvx"
+ScoreManager="*uid://bufxbyhx4xqt4"
+EventBus="*uid://dl3vpnj0giuwk"
+TwitchAuth="*uid://cnfnw0cgkguk1"
 
 [display]
 

@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+config/chat_settings.cfg
+config/settings.cfg

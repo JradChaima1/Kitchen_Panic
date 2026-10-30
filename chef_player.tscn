@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cn0aswk08umhx"]
+
+[ext_resource type="PackedScene" uid="uid://dyemhpnhvx3l4" path="res://assets/chef.glb" id="1_ha8tj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mq8aq"]
+radius = 0.35
+height = 1.8
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1069510272]
+
+[node name="chef" parent="." unique_id=932517828 instance=ExtResource("1_ha8tj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=969943971]
+shape = SubResource("CapsuleShape3D_mq8aq")

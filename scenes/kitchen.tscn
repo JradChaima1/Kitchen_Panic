@@ -12,18 +12,6 @@
 [ext_resource type="Material" uid="uid://c52nvwpqfwbto" path="res://door_counter.tres" id="11_k1jr4"]
 [ext_resource type="PackedScene" uid="uid://cjl6dp4m6wpah" path="res://assets/Stove.glb" id="11_vpxcu"]
 
-[sub_resource type="Environment" id="Environment_mq8aq"]
-background_mode = 1
-background_color = Color(0.9019608, 0.9098039, 0.92156863, 1)
-ambient_light_color = Color(0.7882353, 0.83137256, 0.9411765, 1)
-ambient_light_energy = 0.35
-tonemap_exposure = 1.05
-glow_enabled = true
-glow_bloom = 0.05
-adjustment_enabled = true
-adjustment_contrast = 1.05
-adjustment_saturation = 1.1
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_df3gt"]
 render_priority = 0
 shader = ExtResource("1_7ilqw")
@@ -187,6 +175,7 @@ size = Vector3(1.4, 0.95, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1jr4"]
 albedo_color = Color(1, 0.8784314, 0.4, 1)
+roughness = 0.45
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpxcu"]
 size = Vector3(1.6, 0.15, 4.3)
@@ -199,6 +188,7 @@ size = Vector3(1.4, 0.95, 3.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktc20"]
 albedo_color = Color(0.49803922, 0.8784314, 0.8235294, 1)
+roughness = 0.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_ktc20"]
 size = Vector3(1.55, 0.15, 3.55)
@@ -247,25 +237,6 @@ size = Vector3(0.4, 0.3, 0.05)
 
 [node name="Kitchen" type="Node3D" unique_id=680334787]
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=1483232592]
-
-[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=567873828]
-transform = Transform3D(0.7071067, -0.4075992, 0.5778087, 0, 0.8171449, 0.57643235, -0.7071067, -0.4075992, 0.5778087, 15, 15, 15)
-projection = 1
-size = 22.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=645640430]
-transform = Transform3D(0.81915206, 0.43938503, -0.36868784, 0, 0.6427876, 0.76604444, 0.57357645, -0.6275068, 0.5265408, 0, 0, 0)
-light_color = Color(1, 0.6901961, 0.4392157, 1)
-light_energy = 0.7
-shadow_enabled = true
-shadow_blur = 2.0
-directional_shadow_mode = 0
-directional_shadow_max_distance = 40.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=441255562]
-environment = SubResource("Environment_mq8aq")
-
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1346564813]
 material_override = SubResource("ShaderMaterial_df3gt")
 mesh = SubResource("PlaneMesh_mq8aq")
@@ -279,12 +250,12 @@ mesh = SubResource("BoxMesh_mq8aq")
 
 [node name="BackTrim" type="MeshInstance3D" parent="Walls" unique_id=2137873194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, -6.15)
-material_override = ExtResource("3_vpxcu")
+material_override = ExtResource("4_58u3k")
 mesh = SubResource("BoxMesh_mrp8g")
 
 [node name="LeftTrim" type="MeshInstance3D" parent="Walls" unique_id=47300952]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15, 3.1, 0)
-material_override = ExtResource("3_vpxcu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15, 3.1, 0.25268793)
+material_override = ExtResource("4_58u3k")
 mesh = SubResource("BoxMesh_2b6py")
 
 [node name="LeftWall" type="MeshInstance3D" parent="Walls" unique_id=1546979630]

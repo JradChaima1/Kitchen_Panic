@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ykueqsl0yoi4"]
+
+[ext_resource type="Script" uid="uid://wnoojeg5hpb0" path="res://scripts/items/item_data.gd" id="1_j522s"]
+
+[resource]
+script = ExtResource("1_j522s")
+id = "salt"
+display_name = "Salt"
+aliases = PackedStringArray("salt", "salty")
+metadata/_custom_type_script = "uid://wnoojeg5hpb0"
