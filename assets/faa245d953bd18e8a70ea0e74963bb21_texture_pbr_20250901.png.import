@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csooxr4rb55op"
-path.s3tc="res://.godot/imported/44585c07153b9677f321891365a3cabd_texture_pbr_20250901.png-8590390ed0f1ae0b5b9468c5f2c8520f.s3tc.ctex"
+uid="uid://cwe5rmjq8beft"
+path="res://.godot/imported/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901.png-eb16ddf3f2d23c154c8a8b4ae50fb604.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "46a76ed870ab908948a34bf3b757b130"
+"md5": "059aad8efcc382a9d625118cbc5e65bb"
 }
 
 [deps]
 
-source_file="res://assets/44585c07153b9677f321891365a3cabd_texture_pbr_20250901.png"
-dest_files=["res://.godot/imported/44585c07153b9677f321891365a3cabd_texture_pbr_20250901.png-8590390ed0f1ae0b5b9468c5f2c8520f.s3tc.ctex"]
+source_file="res://assets/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901.png"
+dest_files=["res://.godot/imported/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901.png-eb16ddf3f2d23c154c8a8b4ae50fb604.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

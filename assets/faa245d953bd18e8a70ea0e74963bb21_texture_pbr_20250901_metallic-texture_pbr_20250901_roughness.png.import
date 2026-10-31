@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oflpmpnbjnl5"
-path.s3tc="res://.godot/imported/chef_texture_pbr_20250901.png-5d2687e1f76690ec0710a91bf5b69f02.s3tc.ctex"
+uid="uid://dytbycvjnl87g"
+path.s3tc="res://.godot/imported/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901_metallic-texture_pbr_20250901_roughness.png-a521421ed62468eda3126222c9cc4dec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f5b5f697a979505fd1936a419df3aad5"
+"md5": "4542ee5dac87bae902464ddd37403f7f"
 }
 
 [deps]
 
-source_file="res://assets/chef_texture_pbr_20250901.png"
-dest_files=["res://.godot/imported/chef_texture_pbr_20250901.png-5d2687e1f76690ec0710a91bf5b69f02.s3tc.ctex"]
+source_file="res://assets/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901_metallic-texture_pbr_20250901_roughness.png"
+dest_files=["res://.godot/imported/faa245d953bd18e8a70ea0e74963bb21_texture_pbr_20250901_metallic-texture_pbr_20250901_roughness.png-a521421ed62468eda3126222c9cc4dec.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

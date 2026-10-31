@@ -22,8 +22,14 @@ shader_parameter/tiles = Vector2(16, 12)
 [sub_resource type="PlaneMesh" id="PlaneMesh_mq8aq"]
 size = Vector2(16, 12)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vpxcu"]
+data = PackedVector3Array(8, 0, 6, -8, 0, 6, 8, 0, -6, -8, 0, 6, -8, 0, -6, 8, 0, -6)
+
 [sub_resource type="BoxMesh" id="BoxMesh_mq8aq"]
 size = Vector3(16.6, 3, 0.3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vpxcu"]
+points = PackedVector3Array(8.3, 1.5, 0.15, 8.3, 1.5, -0.15, -8.3, 1.5, 0.15, 8.3, -1.5, 0.15, 8.3, -1.5, -0.15, -8.3, 1.5, -0.15, -8.3, -1.5, 0.15, -8.3, -1.5, -0.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mrp8g"]
 size = Vector3(16.9, 0.35, 0.6)
@@ -33,6 +39,9 @@ size = Vector3(0.6, 0.35, 12.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ilqw"]
 size = Vector3(0.3, 3, 12)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k1jr4"]
+points = PackedVector3Array(-0.15, -1.5, -6, 0.15, -1.5, -6, -0.15, -1.5, 6, -0.15, 1.5, -6, 0.15, 1.5, -6, 0.15, -1.5, 6, -0.15, 1.5, 6, 0.15, 1.5, 6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kfvix"]
 size = Vector3(0.12, 1.2, 0.3)
@@ -241,12 +250,22 @@ size = Vector3(0.4, 0.3, 0.05)
 material_override = SubResource("ShaderMaterial_df3gt")
 mesh = SubResource("PlaneMesh_mq8aq")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=917939862]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=913953105]
+shape = SubResource("ConcavePolygonShape3D_vpxcu")
+
 [node name="Walls" type="Node3D" parent="." unique_id=1402630582]
 
 [node name="BackWall" type="MeshInstance3D" parent="Walls" unique_id=525177725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -6.15)
 material_override = ExtResource("2_mrp8g")
 mesh = SubResource("BoxMesh_mq8aq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/BackWall" unique_id=947733228]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/BackWall/StaticBody3D" unique_id=1557808357]
+shape = SubResource("ConvexPolygonShape3D_vpxcu")
 
 [node name="BackTrim" type="MeshInstance3D" parent="Walls" unique_id=2137873194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, -6.15)
@@ -262,6 +281,11 @@ mesh = SubResource("BoxMesh_2b6py")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15, 1.5, 0)
 material_override = ExtResource("2_mrp8g")
 mesh = SubResource("BoxMesh_7ilqw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/LeftWall" unique_id=818850301]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/LeftWall/StaticBody3D" unique_id=2060961876]
+shape = SubResource("ConvexPolygonShape3D_k1jr4")
 
 [node name="Windows" type="Node3D" parent="." unique_id=1880412504]
 

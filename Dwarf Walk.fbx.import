@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dyemhpnhvx3l4"
-path="res://.godot/imported/chef.glb-ff53095c4b241ca83aeccdcdd5197c29.scn"
+uid="uid://cvql3pnpyt3a6"
+path="res://.godot/imported/Dwarf Walk.fbx-b79e13f4f0bb66804c7fd461e34c2570.scn"
 
 [deps]
 
-source_file="res://assets/chef.glb"
-dest_files=["res://.godot/imported/chef.glb-ff53095c4b241ca83aeccdcdd5197c29.scn"]
+source_file="res://Dwarf Walk.fbx"
+dest_files=["res://.godot/imported/Dwarf Walk.fbx-b79e13f4f0bb66804c7fd461e34c2570.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -40,6 +40,7 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
-gltf/embedded_image_handling=1
-gltf/texture_map_mode=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
